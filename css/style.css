@@ -102,6 +102,14 @@ select {
   background: orange;
 }
 
+.notif {
+  background-color: #1e5475;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+
 /* Footer layout */
 #footer {
   background: #1e5475;
