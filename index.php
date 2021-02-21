@@ -38,7 +38,9 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
           <?php
 
           if ($user_id) {
-            echo "Hi <b>$nama</b>, <a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>";
+            echo "Hi <b>$nama</b>, 
+                      <a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>
+                      <a href='" . BASE_URL . "logout.php'>Logout</a>";
           } else {
 
             echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a> 
