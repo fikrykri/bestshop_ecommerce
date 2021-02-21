@@ -51,12 +51,18 @@ body {
   vertical-align: bottom;
 }
 
+/* Content Layout */
+#content {
+  padding: 10px 0px;
+  overflow: hidden;
+}
+
+/* Footer layout */
 #footer {
   background: #1e5475;
   padding: 10px;
 }
 
-/* Footer layout */
 #footer p {
   color: white;
   text-align: right;
