@@ -35,12 +35,18 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
 
       <div id="menu">
         <div id="user">
-          <a href="<?= BASE_URL . "index.php?page=login" ?>">
-            Login
-          </a>
-          <a href="<?= BASE_URL . "index.php?page=register" ?>">
-            Register
-          </a>
+          <?php
+
+          if ($user_id) {
+            echo "Hi <b>$nama</b>, <a href='" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>";
+          } else {
+
+            echo "<a href='" . BASE_URL . "index.php?page=login'>Login</a> 
+                  <a href='" . BASE_URL . "index.php?page=register'>Register</a>";
+          }
+
+          ?>
+
         </div>
 
         <a href="<?php echo BASE_URL . "index.php?page=keranjang" ?>" id="btn-keranjang">
