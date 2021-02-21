@@ -2,6 +2,9 @@
 
 include_once("function/helper.php");
 
+// code dibawah merupakan pengecekan menggunakan isset
+$page = isset($_GET['page']) ? $_GET['page'] : false;
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +44,16 @@ include_once("function/helper.php");
     </div>
 
     <div id="content">
+
+      <?php
+      $filename = "$page.php";
+
+      if (file_exists($filename)) {
+        include_once($filename);
+      } else {
+        echo "Maaf, file tersebut tidak ada didalam sistem!";
+      }
+      ?>
 
     </div>
 
