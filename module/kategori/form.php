@@ -18,7 +18,7 @@ if ($kategori_id) {
 
 ?>
 
-<form action="<?= BASE_URL . "module/kategori/action.php" ?>" method="POST">
+<form action="<?= BASE_URL . "module/kategori/action.php?kategori_id=$kategori_id" ?>" method="POST">
 
   <div class="element-form">
     <label>Kategori</label>
@@ -38,7 +38,7 @@ if ($kategori_id) {
   </div>
 
   <div class="element-form">
-    <span><button type="submit" name="button"><?= $button ?></button></span>
+    <span><button type="submit" name="button" value="<?= $button ?>"><?= $button ?></button></span>
   </div>
 
 </form>
