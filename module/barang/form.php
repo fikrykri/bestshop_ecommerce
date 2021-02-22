@@ -31,7 +31,7 @@ if ($barang_id) {
 }
 
 ?>
-
+<script src="<?= BASE_URL . "js/ckeditor/ckeditor.js" ?>"></script>
 <form action="<?= BASE_URL . "module/barang/action.php?barang_id=$barang_id" ?>" method="POST" enctype="multipart/form-data">
 
   <div class="element-form">
@@ -59,10 +59,10 @@ if ($barang_id) {
     <span><input type="text" name="nama_barang" value="<?= $nama_barang ?>" /></span>
   </div>
 
-  <div class="element-form">
-    <label>Spesifikasi</label>
+  <div style="margin-bottom: 15px; font-size: 15px;">
+    <label><b>Spesifikasi</b></label>
     <span>
-      <textarea name="spesifikasi"><?= $spesifikasi ?></textarea>
+      <textarea name="spesifikasi" id="editor"><?= $spesifikasi ?></textarea>
     </span>
   </div>
 
@@ -100,3 +100,7 @@ if ($barang_id) {
   </div>
 
 </form>
+
+<script>
+  CKEDITOR.replace("editor");
+</script>
