@@ -89,6 +89,10 @@ select {
   box-sizing: border-box;
 }
 
+.element-form span input[type="radio"] {
+  width: 3%;
+}
+
 .element-form span button {
   background: #545454;
   border: none;
