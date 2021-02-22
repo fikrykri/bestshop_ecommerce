@@ -3,22 +3,32 @@
 $barang_id = isset($_GET['barang_id']) ? $_GET['barang_id'] : false;
 
 $nama_barang = "";
+$kategori_id = "";
 $spesifikasi = "";
+$gambar = "";
 $stok = 0;
 $harga = 0;
 $status = "";
 $button = "Add";
+$keterangan_gambar = "";
 
-// if ($barang_id) {
-//   $query = mysqli_query($koneksi, "SELECT * FROM barang WHERE barang_id='$barang_id'");
+if ($barang_id) {
+  $query = mysqli_query($koneksi, "SELECT * FROM barang WHERE barang_id='$barang_id'");
 
-//   $row = mysqli_fetch_assoc($query);
+  $row = mysqli_fetch_assoc($query);
 
-//   $barang = $row['barang'];
-//   $barang = $row['harga'];
-//   $status = $row['status'];
-//   $button = "Update";
-// }
+  $nama_barang = $row['nama_barang'];
+  $kategori_id = $row['kategori_id'];
+  $spesifikasi = $row['spesifikasi'];
+  $gambar = $row['gambar'];
+  $harga = $row['harga'];
+  $stok = $row['stok'];
+  $status = $row['status'];
+  $button = "Update";
+
+  $keterangan_gambar = "(Klik pilih gambar jika ingin mengganti gambar disamping)";
+  $gambar = "<img src='" . BASE_URL . "images/barang/$gambar' style='width:200px; vertical-align: middle;' />";
+}
 
 ?>
 
@@ -32,7 +42,11 @@ $button = "Add";
 
         $query = mysqli_query($koneksi, "SELECT kategori_id, kategori FROM kategori WHERE status='on' ORDER BY kategori ASC");
         while ($row = mysqli_fetch_assoc($query)) {
-          echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+          if ($kategori_id == $row['kategori_id']) {
+            echo "<option value='$row[kategori_id]' selected='true'>$row[kategori]</option>";
+          } else {
+            echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+          }
         }
 
         ?>
@@ -63,8 +77,10 @@ $button = "Add";
   </div>
 
   <div class="element-form">
-    <label>Gambar Produk</label>
-    <span><input type="file" name="file" /></span>
+    <label>Gambar Produk <?= $keterangan_gambar ?></label>
+    <span>
+      <input type="file" name="file" /> <?= $gambar; ?>
+    </span>
   </div>
 
   <div class="element-form">
