@@ -3,6 +3,7 @@
 session_start();
 
 include_once("function/helper.php");
+include_once("function/koneksi.php");
 
 // code dibawah merupakan pengecekan menggunakan isset
 $page = isset($_GET['page']) ? $_GET['page'] : false;
