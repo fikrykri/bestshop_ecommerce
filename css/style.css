@@ -151,6 +151,58 @@ select {
   background: white;
 }
 
+/* Kategori Tabel */
+
+#frame-tambah {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.tombol-action {
+  background: #5e5e5e;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 3px;
+}
+
+.tombol-action:hover {
+  background: orange;
+}
+
+.table-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.baris-title {
+  background: #e6e6e6;
+}
+
+tr.baris-title th,
+tr td {
+  padding: 10px 7px;
+}
+
+.kolom-nomor {
+  width: 20px;
+  text-align: center;
+}
+
+.kiri {
+  text-align: left;
+}
+
+.tengah {
+  text-align: center;
+}
+
+.kanan {
+  text-align: right;
+}
+
 /* Footer layout */
 #footer {
   background: #545454;
