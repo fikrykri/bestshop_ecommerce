@@ -207,6 +207,38 @@ tr td {
   text-align: right;
 }
 
+/* content main.php */
+#kiri {
+  width: 245px;
+  height: auto;
+  float: left;
+}
+
+#menu-kategori {
+}
+
+#menu-kategori ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-kategori ul li {
+  margin-bottom: 5px;
+}
+
+#menu-kategori ul li a {
+  display: block;
+  padding: 10px;
+  background-color: white;
+  color: #5e5e5e;
+  text-decoration: none;
+}
+
+#menu-kategori ul li a:hover {
+  background: #e8e8e8;
+}
+
 /* Footer layout */
 #footer {
   background: #545454;
