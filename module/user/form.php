@@ -56,6 +56,18 @@ if ($user_id) {
   </div>
 
   <div class="element-form">
+    <label>Level</label>
+    <span>
+      <input type="radio" name="level" value="superadmin" <?php if ($level == "superadmin") {
+                                                            echo "checked='true'";
+                                                          } ?> /> Superadmin
+      <input type="radio" name="level" value="customer" <?php if ($level == "customer") {
+                                                          echo "checked='true'";
+                                                        } ?> /> Customer
+    </span>
+  </div>
+
+  <div class="element-form">
     <label>Status</label>
     <span>
       <input type="radio" name="status" value="on" <?php if ($status == "on") {
