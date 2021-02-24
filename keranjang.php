@@ -33,7 +33,7 @@ if ($total_barang == 0) {
         <td class="kiri"><?= $nama_barang ?></td>
         <td class="tengah"><input type="text" name="<?= $barang_id ?>" value="<?= $quantity ?>" class="update-quantity" /></td>
         <td class="kanan"><?= rupiah($harga) ?></td>
-        <td class="kanan"><?= rupiah($total) ?> <a href="<?= BASE_URL . "hapus_item.php?barang_id='$barang_id'" ?>">X</a></td>
+        <td class="kanan hapus-item"><?= rupiah($total) ?> <a href="<?= BASE_URL . "hapus_item.php?barang_id='$barang_id'" ?>">X</a></td>
       </tr>
 
     <?php
