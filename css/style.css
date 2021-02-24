@@ -243,7 +243,7 @@ tr td {
 /* main content item */
 #kanan {
   width: 840px;
-  margin-right: 15px;
+  margin-left: 15px;
   height: auto;
   float: left;
 }
@@ -314,6 +314,54 @@ tr td {
 
 .btn-add-cart a:hover {
   background-color: orange;
+}
+
+/* detail barang */
+#detail-barang {
+  background: white;
+  padding: 15px;
+}
+
+#detail-barang h2 {
+  margin-top: 0;
+}
+
+#detail-barang #frame-gambar {
+  background: #fbfbfb;
+  padding: 20px;
+}
+
+#detail-barang #frame-gambar img {
+  display: block;
+  margin: 0 auto;
+}
+
+#detail-barang #frame-harga {
+  margin: 15px 0;
+}
+
+#detail-barang #frame-harga span {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
+
+#detail-barang #frame-harga a {
+  background: #5e5e5e;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: inline-block;
+  float: right;
+  border-radius: 3px;
+}
+
+#detail-barang #frame-harga a:hover {
+  background: orange;
+}
+
+#detail-barang #frame-keterangan {
+  margin: 20px 0;
 }
 
 /* Footer layout */
