@@ -31,9 +31,9 @@ if ($total_barang == 0) {
         <td class="tengah"><?= $no ?></td>
         <td class="kiri"><img src="<?= BASE_URL . "images/barang/$gambar" ?>" height="100px"></td>
         <td class="kiri"><?= $nama_barang ?></td>
-        <td class="tengah"><input type="number" name="<?= $barang_id ?>" value="<?= $quantity ?>" class="update-quantity" /></td>
+        <td class="tengah"><input type="text" name="<?= $barang_id ?>" value="<?= $quantity ?>" class="update-quantity" /></td>
         <td class="kanan"><?= rupiah($harga) ?></td>
-        <td class="kanan"><?= rupiah($total) ?></td>
+        <td class="kanan"><?= rupiah($total) ?> <a href="<?= BASE_URL . "hapus_item.php?barang_id='$barang_id'" ?>">X</a></td>
       </tr>
 
     <?php
@@ -42,3 +42,19 @@ if ($total_barang == 0) {
   </table>
 
 <?php } ?>
+
+<script>
+  $(".update-quantity").on("input", function(e) {
+    var barang_id = $(this).attr("name");
+    var value = $(this).val();
+
+    $.ajax({
+        method: "POST",
+        url: "update_keranjang.php",
+        data: "barang_id=" + barang_id + "&value=" + value
+      })
+      .done(function(data) {
+        location.reload();
+      })
+  })
+</script>
