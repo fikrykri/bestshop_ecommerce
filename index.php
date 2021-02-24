@@ -28,8 +28,8 @@ $total_barang = count($keranjang);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BestShop | Ecommerce</title>
 
-  <link rel="stylesheet" href="<?= BASE_URL . "/css/banner.css" ?>" type="text/css">
-  <link rel="stylesheet" href="<?= BASE_URL . "/css/style.css" ?>" type="text/css">
+  <link rel="stylesheet" href="<?= BASE_URL . "css/banner.css" ?>" type="text/css">
+  <link rel="stylesheet" href="<?= BASE_URL . "css/style.css" ?>" type="text/css">
   <script src="<?= BASE_URL . "js/jquery.min.js" ?>"></script>
   <script src="<?= BASE_URL . "js/slidesjs/source/jquery.slides.min.js" ?>"></script>
 

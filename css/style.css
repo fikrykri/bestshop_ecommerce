@@ -62,6 +62,15 @@ body {
   vertical-align: top;
 }
 
+.update-quantity {
+  width: 30px;
+  text-align: center;
+}
+
+.table-list tr {
+  border-bottom: 1px solid #5e5e5e;
+}
+
 /* Content Layout */
 #content {
   padding: 10px 0px;
