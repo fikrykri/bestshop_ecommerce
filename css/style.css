@@ -54,6 +54,14 @@ body {
   vertical-align: bottom;
 }
 
+.total-barang {
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
 /* Content Layout */
 #content {
   padding: 10px 0px;

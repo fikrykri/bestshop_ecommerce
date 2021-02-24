@@ -9,9 +9,13 @@ include_once("function/koneksi.php");
 $page = isset($_GET['page']) ? $_GET['page'] : false;
 $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
 
+// session untuk login user
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
 $nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
 $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
+// session untuk keranjang
+$keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : false;
+$total_barang = count($keranjang);
 
 ?>
 
@@ -24,8 +28,8 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BestShop | Ecommerce</title>
 
-  <link rel="stylesheet" href="<?= BASE_URL . "css/banner.css" ?>" type="text/css">
-  <link rel="stylesheet" href="<?= BASE_URL . "css/style.css" ?>" type="text/css">
+  <link rel="stylesheet" href="<?= BASE_URL . "/css/banner.css" ?>" type="text/css">
+  <link rel="stylesheet" href="<?= BASE_URL . "/css/style.css" ?>" type="text/css">
   <script src="<?= BASE_URL . "js/jquery.min.js" ?>"></script>
   <script src="<?= BASE_URL . "js/slidesjs/source/jquery.slides.min.js" ?>"></script>
 
@@ -71,6 +75,9 @@ $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
 
         <a href="<?php echo BASE_URL . "index.php?page=keranjang" ?>" id="btn-keranjang">
           <img src="<?php echo BASE_URL . "/images/cart.png" ?>" alt="logo" />
+          <?php if ($total_barang != 0) : ?>
+            <span class="total-barang"> <?= $total_barang ?></span>
+          <?php endif ?>
         </a>
       </div>
     </div>
