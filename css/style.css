@@ -83,6 +83,23 @@ body {
   color: #5e5e5e;
 }
 
+.frame-button-keranjang a {
+  background-color: #5e5e5e;
+  color: white;
+  text-decoration: none;
+  padding: 7px 20px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+#lanjut-belanja {
+  float: left;
+}
+
+#lanjut-pemesanan {
+  float: right;
+}
+
 /* Content Layout */
 #content {
   padding: 10px 0px;

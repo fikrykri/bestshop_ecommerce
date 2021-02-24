@@ -16,7 +16,11 @@ if ($total_barang == 0) {
       <th class="kanan">Total</th>
     </tr>
 
-    <?php foreach ($keranjang as $key => $value) {
+
+
+    <?php
+    $subtotal = 0;
+    foreach ($keranjang as $key => $value) {
       $barang_id = $key;
 
       $nama_barang = $value['nama_barang'];
@@ -25,6 +29,7 @@ if ($total_barang == 0) {
       $quantity = $value['quantity'];
 
       $total = $quantity * $harga;
+      $subtotal = $subtotal + $total;
     ?>
 
       <tr>
@@ -39,7 +44,16 @@ if ($total_barang == 0) {
     <?php
       $no++;
     } ?>
+    <tr>
+      <td colspan="5" class="kanan"><b>Sub Total</b></td>
+      <td class="kanan"><b><?= rupiah($subtotal) ?></b></td>
+    </tr>
   </table>
+
+  <div id="frame-button-keranjang">
+    <a href="<?= BASE_URL . "index.php" ?>" id="lanjut-belanja">Lanjut Belanja</a>
+    <a href="<?= BASE_URL . "index.php?page=data_pemesan" ?>" id="lanjut-pemesanan">Lanjut Pemesanan</a>
+  </div>
 
 <?php } ?>
 
