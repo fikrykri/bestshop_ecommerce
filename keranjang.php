@@ -54,7 +54,13 @@ if ($total_barang == 0) {
         data: "barang_id=" + barang_id + "&value=" + value
       })
       .done(function(data) {
-        location.reload();
+        var json = $.parseJSON(data);
+        if (json.status == true) {
+          location.reload();
+        } else {
+          alert(json.pesan);
+          location.reload();
+        }
       })
   })
 </script>
