@@ -83,7 +83,7 @@ body {
   color: #5e5e5e;
 }
 
-.frame-button-keranjang a {
+#frame-button-keranjang a {
   background-color: #5e5e5e;
   color: white;
   text-decoration: none;
