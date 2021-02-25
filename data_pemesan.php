@@ -1,5 +1,5 @@
 <div id="frame-data-pengiriman">
-  <h3>Alamat Pengiriman Barang</h3>
+  <h3 class="label-data-pengiriman">Alamat Pengiriman Barang</h3>
   <div id="frame-form-pengiriman">
     <form action="<?= BASE_URL . "proses_pemesanan.php" ?>" method="POST">
 
@@ -27,7 +27,7 @@
 
             while ($row = mysqli_fetch_assoc($query)) :
             ?>
-              <option value="<?= $row['kota_id'] ?>"><?= $row['kota'] ?></option>
+              <option value="<?= $row['kota_id'] ?>"><?= $row['kota'] ?> (<?= rupiah($row['tarif']) ?>)</option>
             <?php endwhile ?>
           </select>
         </span>
@@ -42,7 +42,7 @@
 </div>
 
 <div id="frame-data-detail">
-  <h3>Detail Order</h3>
+  <h3 class="label-data-pengiriman">Detail Order</h3>
 
   <div id="frame-detail-order">
     <table class="table-list">

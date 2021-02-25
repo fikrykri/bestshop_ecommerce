@@ -100,6 +100,34 @@ body {
   float: right;
 }
 
+/* data pesanan */
+#frame-data-pengiriman {
+  float: left;
+  width: 500px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+#frame-data-detail {
+  width: 560px;
+  float: left;
+}
+
+#frame-detail-order {
+  border: 1px solid grey;
+}
+
+#frame-form-pengiriman {
+  border: 1px solid grey;
+  padding: 25px;
+}
+
+.label-data-pengiriman {
+  border: 1px solid grey;
+  padding: 10px 7px;
+  margin: 0;
+}
+
 /* Content Layout */
 #content {
   padding: 10px 0px;
