@@ -40,3 +40,42 @@
     </form>
   </div>
 </div>
+
+<div id="frame-data-detail">
+  <h3>Detail Order</h3>
+
+  <div id="frame-detail-order">
+    <table class="table-list">
+      <tr>
+        <th class="kiri">Nama Barang</th>
+        <th class="tengah">Qty</th>
+        <th class="kanan">Total</th>
+      </tr>
+
+      <?php
+      $subtotal = 0;
+      foreach ($keranjang as $key => $value) {
+        $barang_id = $key;
+        $nama_barang = $value['nama_barang'];
+        $harga = $value['harga'];
+        $quantity = $value['quantity'];
+
+        $total = $quantity * $harga;
+        $subtotal = $subtotal + $total;
+
+      ?>
+        <tr>
+          <td class="kiri"><?= $nama_barang ?></td>
+          <td class="kanan"><?= $quantity ?></td>
+          <td class="tengah"><?= rupiah($total) ?></td>
+        </tr>
+      <?php } ?>
+      <tr>
+        <td colspan="2" class="kanan"><b>Sub Total</b></td>
+        <td class="kanan"><b><?= rupiah($subtotal) ?></b></td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
