@@ -66,3 +66,45 @@ $kota = $row['kota'];
     </tr>
   </table>
 </div>
+
+<table class="table-list">
+  <tr class="baris-title">
+    <th class="no">No</th>
+    <th class="kiri">Nama Barang</th>
+    <th class="tengah">Qty</th>
+    <th class="kanan">Harga Satuan</th>
+    <th class="kanan">Total</th>
+  </tr>
+
+
+  <?php
+  $queryDetail = mysqli_query($koneksi, "SELECT pesanan_detail.*,
+                                                barang.nama_barang 
+                                          FROM pesanan_detail JOIN barang ON pesanan_detail.barang_id = barang.barang_id WHERE pesanan_detail.pesanan_id=$pesanan_id");
+  $no = 1;
+  $subtotal = 0;
+  while ($rowDetail = mysqli_fetch_assoc($queryDetail)) {
+    $harga = $rowDetail['harga'];
+    $quantity = $rowDetail['quantity'];
+    $total = $harga * $quantity;
+    $subtotal = $subtotal + $total
+  ?>
+    <tr>
+      <td class="no"><?= $no++ ?></td>
+      <td class="kiri"><?= $rowDetail['nama_barang'] ?></td>
+      <td class="tengah"><?= $quantity ?></td>
+      <td class="kanan"><?= rupiah($harga) ?></td>
+      <td class="kanan"><?= rupiah($total) ?></td>
+    </tr>
+  <?php }
+  $subtotal = $subtotal + $tarif;
+  ?>
+  <tr>
+    <td colspan="4" class="kanan"><b>Biaya Pengiriman</b></td>
+    <td class="kanan"><b><?= rupiah($tarif) ?></b></td>
+  </tr>
+  <tr>
+    <td colspan="4" class="kanan"><b>Sub Total</b></td>
+    <td class="kanan"><b><?= rupiah($subtotal) ?></b></td>
+  </tr>
+</table>
