@@ -108,3 +108,12 @@ $kota = $row['kota'];
     <td class="kanan"><b><?= rupiah($subtotal) ?></b></td>
   </tr>
 </table>
+
+<div id="frame-keteragan-pembayaran">
+  <p>
+    Silahkan Lakukan Pembayaran ke Bang BCA <br>
+    Nomor Account : 0000-5555-4444 (A/N BestShop) <br>
+    Setelah melakukan pembayaran silahkan lakukan konfirmasi pembayaran
+    <a href="<?= BASE_URL . "index.php?page=my_profile&module=pesanan&action=konfirmasi_pembayaran&pesanan_id=$pesanan_id" ?>">Disini</a>
+  </p>
+</div>
