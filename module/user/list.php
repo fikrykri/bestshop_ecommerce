@@ -5,7 +5,11 @@
 </div>
 <?php
 
-$queryKategory = mysqli_query($koneksi, "SELECT * FROM user");
+$pagination = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
+$data_per_halaman = 5;
+$mulai_dari = ($pagination - 1) * $data_per_halaman;
+
+$queryKategory = mysqli_query($koneksi, "SELECT * FROM user LIMIT $mulai_dari, $data_per_halaman");
 
 if (mysqli_num_rows($queryKategory) == 0) {
   echo "<h3>Saat ini beluma da nama user di dalam tabel user</h3>";
@@ -23,7 +27,7 @@ if (mysqli_num_rows($queryKategory) == 0) {
             <th class='tengah'>Action</th>
           </tr>";
 
-  $no = 1;
+  $no = 1 + $mulai_dari;
   while ($row = mysqli_fetch_assoc($queryKategory)) {
 
     echo "<tr class='baris-data'>
@@ -44,6 +48,8 @@ if (mysqli_num_rows($queryKategory) == 0) {
   }
 
   echo "</table>";
+  $queryHitungUser = mysqli_query($koneksi, "SELECT * FROM user");
+  pagination($queryHitungUser, $data_per_halaman, $pagination, "index.php?page=my_profile&module=user&action=list");
 }
 
 ?>

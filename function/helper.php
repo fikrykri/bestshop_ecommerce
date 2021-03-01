@@ -45,3 +45,19 @@ function admin_only($module, $level)
     }
   }
 }
+
+function pagination($query, $data_per_halaman, $pagination, $url)
+{
+  $total_data = mysqli_num_rows($query);
+  $total_halaman = ceil($total_data / $data_per_halaman); // ceil fungsi untuk membulatkan angka keatas
+
+  echo "<ul class='pagination'>";
+  for ($i = 1; $i <= $total_halaman; $i++) {
+    if ($pagination == $i) {
+      echo "<li><a href='" . BASE_URL . "$url&pagination=$i' class='active'>$i</a></li>";
+    } else {
+      echo "<li><a href='" . BASE_URL . "$url&pagination=$i'>$i</a></li>";
+    }
+  }
+  echo "</ul>";
+}

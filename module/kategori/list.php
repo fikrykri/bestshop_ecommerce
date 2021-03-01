@@ -6,7 +6,7 @@
 <?php
 
 $pagination = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
-$data_per_halaman = 3;
+$data_per_halaman = 5;
 $mulai_dari = ($pagination - 1) * $data_per_halaman;
 
 $queryKategory = mysqli_query($koneksi, "SELECT * FROM kategori LIMIT $mulai_dari, $data_per_halaman");
@@ -23,7 +23,7 @@ if (mysqli_num_rows($queryKategory) == 0) {
             <th class='tengah'>Action</th>
           </tr>";
 
-  $no = 1;
+  $no = 1 + $mulai_dari;
   while ($row = mysqli_fetch_assoc($queryKategory)) {
 
     echo "<tr class='baris-data'>
@@ -41,18 +41,7 @@ if (mysqli_num_rows($queryKategory) == 0) {
 
   echo "</table>";
   $queryHitungKategory = mysqli_query($koneksi, "SELECT * FROM kategori");
-  $total_data = mysqli_num_rows($queryHitungKategory);
-  $total_halaman = ceil($total_data / $data_per_halaman); // ceil fungsi untuk membulatkan angka keatas
-
-  echo "<ul class='pagination'>";
-  for ($i = 1; $i <= $total_halaman; $i++) {
-    if ($pagination == $i) {
-      echo "<li><a href='" . BASE_URL . "index.php?page=my_profile&module=kategori&action=list&pagination=$i' class='active'>$i</a></li>";
-    } else {
-      echo "<li><a href='" . BASE_URL . "index.php?page=my_profile&module=kategori&action=list&pagination=$i'>$i</a></li>";
-    }
-  }
-  echo "</ul>";
+  pagination($queryHitungKategory, $data_per_halaman, $pagination, "index.php?page=my_profile&module=kategori&action=list");
 }
 
 ?>

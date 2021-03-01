@@ -4,8 +4,11 @@
 
 </div>
 <?php
+$pagination = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
+$data_per_halaman = 5;
+$mulai_dari = ($pagination - 1) * $data_per_halaman;
 
-$query = mysqli_query($koneksi, "SELECT * FROM banner");
+$query = mysqli_query($koneksi, "SELECT * FROM banner LIMIT $mulai_dari, $data_per_halaman");
 
 if (mysqli_num_rows($query) == 0) {
   echo "<h3>Saat ini beluma ada banner di dalam tabel banner</h3>";
@@ -38,6 +41,8 @@ if (mysqli_num_rows($query) == 0) {
   }
 
   echo "</table>";
+  $queryHitungBanner = mysqli_query($koneksi, "SELECT * FROM banner");
+  pagination($queryHitungBanner, $data_per_halaman, $pagination, "index.php?page=my_profile&module=banner&action=list");
 }
 
 ?>
