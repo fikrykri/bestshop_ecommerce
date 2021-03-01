@@ -454,6 +454,8 @@ tr td {
   border: 1px solid #5e5e5e;
   padding: 5px 7px;
   text-decoration: none;
+  border-radius: 3px;
+  display: block;
 }
 
 .pagination li a:hover {
