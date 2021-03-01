@@ -35,3 +35,13 @@ function kategori($kategori_id = false)
 
   return $string;
 }
+
+function admin_only($module, $level)
+{
+  if ($level != "superadmin") {
+    $admin_pages = array("kategori", "barang", "kota", "user", "banner");
+    if (in_array($module, $admin_pages)) {
+      header("location:" . BASE_URL);
+    }
+  }
+}

@@ -3,6 +3,8 @@
 include_once("../../function/koneksi.php");
 include_once("../../function/helper.php");
 
+admin_only("banner", $level);
+
 $banner = $_POST['banner'];
 $status = $_POST['status'];
 $button = $_POST['button'];
