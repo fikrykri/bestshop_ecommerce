@@ -2,6 +2,11 @@
 // code dibawah merupakan konstanta BASE_URL yang isi/ valuenya yang disebelah kanannya
 define("BASE_URL", "http://localhost/bestshop_ecommerce/");
 
+$arrayStatusPesanan[0] = "Menunggu Pembayaran";
+$arrayStatusPesanan[1] = "Pembayaran Sedang di Validasi";
+$arrayStatusPesanan[2] = "Lunas";
+$arrayStatusPesanan[3] = "Pembayaran Ditolak";
+
 function rupiah($nilai = 0)
 {
   $string = "Rp." . number_format($nilai);

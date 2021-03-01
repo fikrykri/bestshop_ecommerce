@@ -2,7 +2,7 @@
 $pesanan_id = $_GET['pesanan_id'];
 ?>
 
-<form action="<?= BASE_URL . "module/pemesanan/action.php?pesanan_id=$pesanan_id" ?>" method="POST">
+<form action="<?= BASE_URL . "module/pesanan/action.php?pesanan_id=$pesanan_id" ?>" method="POST">
 
   <div class="element-form">
     <label>Nomor Rekening</label>
