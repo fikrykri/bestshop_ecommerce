@@ -40,7 +40,7 @@ if (mysqli_num_rows($queryKategory) == 0) {
               <td class='tengah'>$row[status]</td>
               <td class='tengah'>
                 <a href='" . BASE_URL . "index.php?page=my_profile&module=user&action=form&user_id=$row[user_id]' class='tombol-action'>Edit</a>
-
+                <a href='" . BASE_URL . "module/user/action.php?button=Delete&user_id=$row[user_id]' class='tombol-action delete'>Delete</a>
               </td>
             </tr>";
 

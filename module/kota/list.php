@@ -34,7 +34,7 @@ if (mysqli_num_rows($queryKategory) == 0) {
               <td class='tengah'>$row[status]</td>
               <td class='tengah'>
                 <a href='" . BASE_URL . "index.php?page=my_profile&module=kota&action=form&kota_id=$row[kota_id]' class='tombol-action'>Edit</a>
-
+                <a href='" . BASE_URL . "module/kota/action.php?button=Delete&kota_id=$row[kota_id]' class='tombol-action delete'>Delete</a>
               </td>
             </tr>";
 

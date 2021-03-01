@@ -35,6 +35,7 @@ while ($row = mysqli_fetch_assoc($queryPesanan)) {
       <td class="kiri">
         <a class="tombol-action" href="<?= BASE_URL . "index.php?page=my_profile&module=pesanan&action=detail&pesanan_id=$row[pesanan_id]" ?>">Detail Pesanan</a>
         <?= $adminButton ?>
+        <a class="tombol-action delete" href="<?= BASE_URL . "module/pesanan/action.php?button=Delete&pesanan_id=$row[pesanan_id]" ?>">Delete</a>
       </td>
     </tr>
   <?php } ?>

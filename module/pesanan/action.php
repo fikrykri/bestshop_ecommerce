@@ -5,8 +5,8 @@ include_once("../../function/helper.php");
 
 session_start();
 
-$pesanan_id = $_GET['pesanan_id'];
-$button = $_POST['button'];
+$button = isset($_POST['button']) ? $_POST['button'] : $_GET['button'];
+$pesanan_id = isset($_GET['pesanan_id']) ? $_GET['pesanan_id'] : "";
 
 if ($button == "Konfirmasi") {
   $user_id = $_SESSION['user_id'];
@@ -33,6 +33,8 @@ if ($button == "Konfirmasi") {
       mysqli_query($koneksi, "UPDATE barang SET stok=stok-$quantity WHERE barang_id=$barang_id");
     }
   }
+} else if ($button == "Delete") {
+  mysqli_query($koneksi, "DELETE FROM pesanan WHERE pesanan_id=$pesanan_id");
 }
 
 header("location:" . BASE_URL . "index.php?page=my_profile&module=pesanan&action=list");
