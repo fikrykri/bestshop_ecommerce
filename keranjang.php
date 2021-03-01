@@ -51,7 +51,7 @@ if ($total_barang == 0) {
   <div id="frame-button-keranjang">
     <a href="<?= BASE_URL . "index.php" ?>" id="lanjut-belanja">
       << Lanjut Belanja</a>
-        <a href="<?= BASE_URL . "index.php?page=data_pemesan" ?>" id="lanjut-pemesanan">Lanjut Pemesanan >></a>
+        <a href="<?= BASE_URL . "data-pemesan.html" ?>" id="lanjut-pemesanan">Lanjut Pemesanan >></a>
   </div>
 
 <?php } ?>
