@@ -48,13 +48,16 @@ if ($user_id) {
     </div>
 
     <div class="element-form">
-      <label>Password</label>
-      <span><input type="password" name="password" /></span>
+      <div class="label-password">
+        <label>Password</label>
+        <i class="btn-hide-show far fa-eye-slash" title="Show Password"></i>
+      </div>
+      <span><input type="password" name="password" class="input-password" /></span>
     </div>
 
     <div class="element-form">
       <label>Re-type Password</label>
-      <span><input type="password" name="re_password" /></span>
+      <span><input type="password" name="re_password" class="input-password" /></span>
     </div>
 
     <div class="element-form">

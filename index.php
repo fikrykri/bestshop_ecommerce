@@ -30,8 +30,11 @@ $total_barang = count($keranjang);
 
   <link rel="stylesheet" href="<?= BASE_URL . "css/banner.css" ?>" type="text/css">
   <link rel="stylesheet" href="<?= BASE_URL . "css/style.css" ?>" type="text/css">
+  <link rel="stylesheet" href="<?= BASE_URL . "css/fontawesome/css/all.min.css" ?>" type="text/css">
+
   <script src="<?= BASE_URL . "js/jquery.min.js" ?>"></script>
   <script src="<?= BASE_URL . "js/slidesjs/source/jquery.slides.min.js" ?>"></script>
+  <script src="<?= BASE_URL . "js/script.js" ?>"></script>
 
   <script>
     $(function() {

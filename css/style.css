@@ -185,6 +185,11 @@ select {
   background: orange;
 }
 
+.element-form .label-password {
+  display: flex;
+  justify-content: space-between;
+}
+
 .notif {
   background-color: #545454;
   color: white;
