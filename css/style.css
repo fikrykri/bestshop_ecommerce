@@ -438,6 +438,33 @@ tr td {
   margin: 20px 0;
 }
 
+/* pagination */
+.pagination {
+  margin: 10px 0 0 0;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  float: left;
+}
+
+.pagination li a {
+  margin-right: 10px;
+  border: 1px solid #5e5e5e;
+  padding: 5px 7px;
+  text-decoration: none;
+}
+
+.pagination li a:hover {
+  font-weight: bold;
+}
+
+.pagination li a.active {
+  background-color: #5e5e5e;
+  color: white;
+}
+
 /* Footer layout */
 #footer {
   background: #545454;

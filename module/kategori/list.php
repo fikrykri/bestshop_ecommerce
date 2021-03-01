@@ -44,9 +44,15 @@ if (mysqli_num_rows($queryKategory) == 0) {
   $total_data = mysqli_num_rows($queryHitungKategory);
   $total_halaman = ceil($total_data / $data_per_halaman); // ceil fungsi untuk membulatkan angka keatas
 
+  echo "<ul class='pagination'>";
   for ($i = 1; $i <= $total_halaman; $i++) {
-    echo "<a href='" . BASE_URL . "index.php?page=my_profile&module=kategori&action=list&pagination=$i'>$i</a>";
+    if ($pagination == $i) {
+      echo "<li><a href='" . BASE_URL . "index.php?page=my_profile&module=kategori&action=list&pagination=$i' class='active'>$i</a></li>";
+    } else {
+      echo "<li><a href='" . BASE_URL . "index.php?page=my_profile&module=kategori&action=list&pagination=$i'>$i</a></li>";
+    }
   }
+  echo "</ul>";
 }
 
 ?>
